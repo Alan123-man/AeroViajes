@@ -36,7 +36,7 @@ public class VentanaLogin extends JFrame {
                 new FormularioVuelos().setVisible(true); // Abre la app principal
                 this.dispose(); // Cierra el login
             } else {
-                JOptionPane.showMessageDialog(this, "Credenciales incorrectas");
+                JOptionPane.showMessageDialog(this, "Nombre de usuario o contraseña incorrectas");
             }
         });
 
