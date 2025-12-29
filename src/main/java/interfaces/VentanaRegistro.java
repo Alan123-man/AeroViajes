@@ -18,7 +18,7 @@ public class VentanaRegistro extends JFrame {
         setLayout(new GridLayout(3, 1));
 
         JPanel p1 = new JPanel(); p1.add(new JLabel("Usuario:")); p1.add(txtNuevoUser);
-        JPanel p2 = new JPanel(); p2.add(new JLabel("Clave:")); p2.add(txtNuevaPass);
+        JPanel p2 = new JPanel(); p2.add(new JLabel("Contaseña:")); p2.add(txtNuevaPass);
 
         add(p1); add(p2); add(btnGuardar);
 
