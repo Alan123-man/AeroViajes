@@ -12,7 +12,7 @@ public class VentanaLogin extends JFrame {
 
     public VentanaLogin() {
         setTitle("Login AeroViajes");
-        setSize(350, 250);
+        setSize(400, 250);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(4, 1));
@@ -20,9 +20,21 @@ public class VentanaLogin extends JFrame {
         add(new JLabel("Usuario:", JLabel.CENTER)); add(txtUser);
         add(new JLabel("Clave:", JLabel.CENTER)); add(txtPass);
 
+        // Configuración de botones
         JButton btnEntrar = new JButton("Entrar");
+        btnEntrar.setBackground(new Color(46, 204, 113)); // Color Verde
+        btnEntrar.setForeground(Color.WHITE); // Texto blanco
+        btnEntrar.setFocusPainted(false);
+
         JButton btnReg = new JButton("Registrarse");
+        btnReg.setBackground(new Color(52, 152, 219)); // Color Azul
+        btnReg.setForeground(Color.WHITE);
+        btnReg.setFocusPainted(false);
+
         JButton btnSalir = new JButton("Salir");
+        btnSalir.setBackground(new Color(231, 76, 60)); // Color Rojo
+        btnSalir.setForeground(Color.WHITE);
+        btnSalir.setFocusPainted(false);
 
         JPanel pnlBotones = new JPanel();
         pnlBotones.add(btnEntrar);
@@ -49,7 +61,10 @@ public class VentanaLogin extends JFrame {
 
         // Acción para salir de la aplicación
         btnSalir.addActionListener(e -> {
-            System.exit(0); // Cierra completamente el programa
+            int confirm = JOptionPane.showConfirmDialog(this, "¿Desea salir de la aplicación?", "Confirmar", JOptionPane.YES_NO_OPTION);
+            if (confirm == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
         });
     }
 }
