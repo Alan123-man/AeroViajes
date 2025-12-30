@@ -8,11 +8,10 @@ public class Vuelo {
     private int asientos;
     private String tipo;
 
-    // CONSTRUCTOR VACÍO (Indispensable para que VueloDAO funcione)
-    public Vuelo() {
-    }
+    // 1. Constructor vacío (Obligatorio para que funcione 'new Vuelo()')
+    public Vuelo() {}
 
-    // GETTERS Y SETTERS
+    // 2. Getters y Setters (Obligatorios para asignar datos desde la DB)
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 

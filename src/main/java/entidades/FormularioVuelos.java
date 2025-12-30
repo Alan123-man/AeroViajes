@@ -7,19 +7,17 @@ import java.awt.*;
 public class FormularioVuelos extends JFrame {
     private JTable tablaVuelos;
     private DefaultTableModel modelo;
-    private JTextField txtDestino = new JTextField(10); // Renombrado
+    private JTextField txtDestino = new JTextField(10);
     private JTextField txtOrigen = new JTextField(10);
     private JComboBox<String> comboTipo = new JComboBox<>(new String[]{"Todos", "Nacional", "Internacional"});
     private VueloDAO dao = new VueloDAO();
 
-    // Dentro de FormularioVuelos.java
     public FormularioVuelos() {
         setTitle("Panel de Ventas - AeroViajes");
         setSize(850, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Asegúrate de que pnlNorte y btnBuscar se declaren solo UNA vez
         JPanel pnlNorte = new JPanel();
         pnlNorte.add(new JLabel("Origen:"));
         pnlNorte.add(txtOrigen);
@@ -30,8 +28,6 @@ public class FormularioVuelos extends JFrame {
 
         JButton btnBuscar = new JButton("Buscar");
         pnlNorte.add(btnBuscar);
-
-    }
 
         modelo = new DefaultTableModel(new String[]{"ID", "Origen", "Destino", "Precio", "Asientos"}, 0);
         tablaVuelos = new JTable(modelo);
@@ -50,14 +46,16 @@ public class FormularioVuelos extends JFrame {
                     JOptionPane.showMessageDialog(this, "¡Ticket Generado!");
                     cargarDatos();
                 }
+            } else {
+                JOptionPane.showMessageDialog(this, "Seleccione un vuelo de la tabla");
             }
         });
+
         cargarDatos();
-    }
+    } // AQUÍ CIERRA EL CONSTRUCTOR
 
     private void cargarDatos() {
         modelo.setRowCount(0);
-        // Usamos los nombres correctos de las variables aquí
         for (Vuelo v : dao.filtrarVuelos(txtOrigen.getText(), txtDestino.getText(), comboTipo.getSelectedItem().toString())) {
             modelo.addRow(new Object[]{v.getId(), v.getOrigen(), v.getDestino(), v.getPrecio(), v.getAsientos()});
         }
