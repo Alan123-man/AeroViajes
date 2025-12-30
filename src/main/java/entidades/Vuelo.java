@@ -6,18 +6,27 @@ public class Vuelo {
     private String destino;
     private double precio;
     private int asientos;
+    private String tipo;
 
-    public Vuelo(int id, String origen, String destino, double precio, int asientos) {
-        this.id = id;
-        this.origen = origen;
-        this.destino = destino;
-        this.precio = precio;
-        this.asientos = asientos;
-    }
+    // 1. Constructor vacío (Obligatorio para que funcione 'new Vuelo()')
+    public Vuelo() {}
 
+    // 2. Getters y Setters (Obligatorios para asignar datos desde la DB)
     public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
     public String getOrigen() { return origen; }
+    public void setOrigen(String origen) { this.origen = origen; }
+
     public String getDestino() { return destino; }
+    public void setDestino(String destino) { this.destino = destino; }
+
     public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
+
     public int getAsientos() { return asientos; }
+    public void setAsientos(int asientos) { this.asientos = asientos; }
+
+    public String getTipo() { return tipo; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
 }
