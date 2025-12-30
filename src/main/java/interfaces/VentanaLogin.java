@@ -23,17 +23,17 @@ public class VentanaLogin extends JFrame {
         // Configuración de botones
         JButton btnEntrar = new JButton("Entrar");
         btnEntrar.setBackground(new Color(46, 204, 113)); // Color Verde
-        btnEntrar.setForeground(Color.WHITE); // Texto blanco
+        btnEntrar.setForeground(Color.BLACK); // Texto blanco
         btnEntrar.setFocusPainted(false);
 
         JButton btnReg = new JButton("Registrarse");
         btnReg.setBackground(new Color(52, 152, 219)); // Color Azul
-        btnReg.setForeground(Color.WHITE);
+        btnReg.setForeground(Color.BLACK);
         btnReg.setFocusPainted(false);
 
         JButton btnSalir = new JButton("Salir");
         btnSalir.setBackground(new Color(231, 76, 60)); // Color Rojo
-        btnSalir.setForeground(Color.WHITE);
+        btnSalir.setForeground(Color.BLACK);
         btnSalir.setFocusPainted(false);
 
         JPanel pnlBotones = new JPanel();
