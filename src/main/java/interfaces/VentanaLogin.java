@@ -12,7 +12,7 @@ public class VentanaLogin extends JFrame {
 
     public VentanaLogin() {
         setTitle("Login AeroViajes");
-        setSize(300, 250);
+        setSize(350, 250);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(4, 1));
@@ -22,10 +22,12 @@ public class VentanaLogin extends JFrame {
 
         JButton btnEntrar = new JButton("Entrar");
         JButton btnReg = new JButton("Registrarse");
+        JButton btnSalir = new JButton("Salir");
 
         JPanel pnlBotones = new JPanel();
         pnlBotones.add(btnEntrar);
         pnlBotones.add(btnReg);
+        pnlBotones.add(btnSalir);
         add(pnlBotones);
 
         // Acción para entrar al sistema
@@ -43,6 +45,11 @@ public class VentanaLogin extends JFrame {
         // Acción para abrir la ventana de registro
         btnReg.addActionListener(e -> {
             new VentanaRegistro().setVisible(true);
+        });
+
+        // Acción para salir de la aplicación
+        btnSalir.addActionListener(e -> {
+            System.exit(0); // Cierra completamente el programa
         });
     }
 }
